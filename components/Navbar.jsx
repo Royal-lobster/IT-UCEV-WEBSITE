@@ -39,6 +39,13 @@ function Navbar({ pages }) {
             max-width:90vw;
             overflow-x:scroll;
           }
+          .nav__links {
+                  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+                  scrollbar-width: none;  /* Firefox */
+              }
+              .nav__links::-webkit-scrollbar { 
+                  display: none;  /* Safari and Chrome */
+              }
           .nav__link {
             display: block;
             border: 2px solid transparent;
