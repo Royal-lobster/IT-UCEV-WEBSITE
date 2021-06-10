@@ -9,6 +9,7 @@ function Navbar({ pages }) {
           {pages.map((page) => {
             return (
               <a
+                key={page.name}
                 className={`nav__link ${page.isActive && "nav__link--active"}`}
                 href={page.url}
               >
@@ -24,6 +25,7 @@ function Navbar({ pages }) {
             display: flex;
             justify-content: space-around;
             align-items: center;
+            flex-wrap: wrap;
             background-color: #222;
             padding: 20px;
             color: #eee;
@@ -34,6 +36,8 @@ function Navbar({ pages }) {
           .nav__links {
             display: flex;
             gap: 10px;
+            max-width:90vw;
+            overflow-x:scroll;
           }
           .nav__link {
             display: block;
