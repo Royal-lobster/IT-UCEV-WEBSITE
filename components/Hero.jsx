@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min.js";
 function Hero() {
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -30,10 +31,11 @@ function Hero() {
           </div>
         </div>
       </div>
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
       <style jsx>{`
         .hero {
           position: relative;
+          background-color: #23153c;
         }
         .hero__Text {
           position: absolute;
@@ -50,7 +52,7 @@ function Hero() {
         }
         .hero__Text h3 {
           font-size: min(20px, 8vw);
-          font-weight: 300px;
+          font-weight: 300;
           border-left: 3px solid #ff3e81;
           padding-left: 30px;
         }
@@ -59,9 +61,19 @@ function Hero() {
         }
 
         @media screen and (max-width: 700px) {
+          .hero__background {
+            filter: blur(4px);
+          }
           .hero__Text {
-            top: 15%;
+            top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
+            padding-top: 20%;
+            margin-left: 20px;
+          }
+          .hero__Text h3 {
+            padding-left: 20px;
           }
         }
       `}</style>

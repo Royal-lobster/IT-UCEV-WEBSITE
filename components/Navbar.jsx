@@ -98,7 +98,7 @@ function Navbar({ pages }) {
 
           @media screen and (max-width: 700px) {
             nav {
-              border-bottom: 1px solid #eee;
+              border-bottom: 1px solid #603c9e;
               position: relative;
               background-color: #23153c;
             }
