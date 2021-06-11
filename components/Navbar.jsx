@@ -15,6 +15,7 @@ function Navbar({ pages }) {
           {pages.map((page) => {
             return (
               <a
+                key={page.name}
                 className={`nav__link ${page.isActive && "nav__link--active"}`}
                 href={page.url}
               >
@@ -70,6 +71,15 @@ function Navbar({ pages }) {
           .nav__links {
             display: flex;
             gap: 10px;
+            max-width: 90vw;
+            overflow-x: scroll;
+          }
+          .nav__links {
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            scrollbar-width: none; /* Firefox */
+          }
+          .nav__links::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
           }
           .nav__link {
             display: block;
