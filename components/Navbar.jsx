@@ -96,7 +96,7 @@ function Navbar({ pages }) {
             border-radius: 8px;
           }
 
-          @media screen and (max-width: 500px) {
+          @media screen and (max-width: 700px) {
             nav {
               border-bottom: 1px solid #eee;
               position: relative;

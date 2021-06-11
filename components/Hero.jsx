@@ -44,17 +44,25 @@ function Hero() {
           color: white;
         }
         .hero__Text h1 {
-          font-size: 60px;
+          font-size: min(60px, 15vw);
           font-weight: 900;
           color: #ff3e81;
         }
         .hero__Text h3 {
+          font-size: min(20px, 8vw);
           font-weight: 300px;
           border-left: 3px solid #ff3e81;
           padding-left: 30px;
         }
         .hero__background {
           height: 600px;
+        }
+
+        @media screen and (max-width: 700px) {
+          .hero__Text {
+            top: 15%;
+            left: 0;
+          }
         }
       `}</style>
     </>
