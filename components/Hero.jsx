@@ -48,7 +48,7 @@ function Hero() {
         .hero__Text h1 {
           font-size: min(60px, 15vw);
           font-weight: 900;
-          color: #ff3e81;
+          color: #fff;
         }
         .hero__Text h3 {
           font-size: min(20px, 8vw);
