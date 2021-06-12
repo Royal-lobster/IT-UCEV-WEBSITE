@@ -70,6 +70,7 @@ function AboutJntuv() {
             }
             .aboutJntuv__map {
               width: 80%;
+              margin-top: 30px;
             }
           }
         `}
