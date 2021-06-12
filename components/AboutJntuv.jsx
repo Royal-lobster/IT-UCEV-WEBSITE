@@ -28,7 +28,7 @@ function AboutJntuv() {
         </p>
         <ReactMapGL
           className="aboutJntuv__map"
-          mapboxApiAccessToken={process.env.MAPBOX_API_KEY}
+          mapboxApiAccessToken="pk.eyJ1Ijoicm95YWwtbG9ic3RlciIsImEiOiJja3B1MGFuYnIxNDQ3MnZxa3R3c2Nrejd5In0.LnjKgujtx6tI7RvFJe1_qQ"
           {...viewport}
           mapStyle="mapbox://styles/mapbox/satellite-streets-v11"
           onViewportChange={(nextViewport) => setViewport(nextViewport)}
