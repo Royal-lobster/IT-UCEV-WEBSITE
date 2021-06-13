@@ -67,6 +67,7 @@ function Hero() {
             left: 0;
             right: 0;
             bottom: 0;
+            transform: unset;
             padding-top: 20%;
             margin-left: min(20px, 3vw);
           }
