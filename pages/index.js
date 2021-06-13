@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import AboutJntuv from "../components/AboutJntuv";
-import PostSection from "../components/PostsSection";
+import PostSection from "../components/LatestNewsSection";
 function index() {
   let pages = [
     { name: "Home", isActive: true, url: "#" },
