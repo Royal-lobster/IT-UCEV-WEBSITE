@@ -72,6 +72,9 @@ function AboutJntuv() {
               width: 80%;
               margin-top: 30px;
             }
+            .aboutJntuv__text {
+              font-size: 14px;
+            }
           }
         `}
       </style>
