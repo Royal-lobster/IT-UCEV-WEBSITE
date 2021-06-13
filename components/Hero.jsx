@@ -39,8 +39,9 @@ function Hero() {
         }
         .hero__Text {
           position: absolute;
-          top: 15%;
+          top: 50%;
           left: 10vw;
+          transform: translateY(-50%);
           max-width: 800px;
           padding: 5vw;
           color: white;
