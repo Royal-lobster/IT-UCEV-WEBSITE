@@ -61,16 +61,13 @@ function Hero() {
         }
 
         @media screen and (max-width: 700px) {
-          .hero__background {
-            filter: blur(4px);
-          }
           .hero__Text {
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             padding-top: 20%;
-            margin-left: 20px;
+            margin-left: min(20px, 3vw);
           }
           .hero__Text h3 {
             padding-left: 20px;
