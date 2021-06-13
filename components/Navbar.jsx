@@ -101,6 +101,7 @@ function Navbar({ pages }) {
               border-bottom: 1px solid #603c9e;
               position: relative;
               background-color: #23153c;
+              padding: 20px 20px;
             }
             .nav__links {
               display: none;
