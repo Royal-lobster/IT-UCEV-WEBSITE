@@ -15,16 +15,25 @@ function HODMessage() {
               developed a distinct style and method that bridges the theory –
               practice divide while remaining grounded in the core. Technology
               changes rapidly, especially in the field of computing, whereas the
-              science, if it changes at all, does so much more gradually.{" "}
+              science, if it changes at all, does so much more gradually.Our
+              understanding is that persons who are clear and thorough about the
+              fundamentals can adapt to rapid changes in technology relatively
+              easily. Our Department has produced hundreds of professionals and
+              has established a name for itself in the country and abroad.
             </p>
-            <Image src="/images/hod_image.jpg" height="200" width="300" />
+            <div className="hodMessage__imgAndCaption">
+              <Image src="/images/hod_image.jpg" height="200" width="300" />
+              <div className="hodMessage__caption">
+                <h4>Dr.G.Jaya Suma </h4>
+                <p>
+                  Professor, HoD & OSD-JNTUK, Kurupam JNTUK University College
+                  of Engineering
+                </p>
+              </div>
+            </div>
           </div>
           <p className="hodMessage__text">
-            Our understanding is that persons who are clear and thorough about
-            the fundamentals can adapt to rapid changes in technology relatively
-            easily. Our Department has produced hundreds of professionals and
-            has established a name for itself in the country and abroad. They
-            have consistently excelled in the highly competitive industrial
+            They have consistently excelled in the highly competitive industrial
             environment. They are given a strong foundation in information
             technology and problem-solving techniques, and are made adaptable to
             changes. Through educational leadership, research and development,
@@ -54,13 +63,27 @@ function HODMessage() {
             font-weight: 900;
           }
           .hodMessage__imgText {
+            flex: 1;
             display: flex;
             flex-wrap: wrap;
             color: #333;
             font-size: 18px;
             align-items: center;
+            justify-content: space-evenly;
             margin-bottom: 40px;
             gap: 20px;
+          }
+          .hodMessage__caption {
+            width: 300px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .hodMessage__caption h4 {
+            margin: 5px 0;
+            font-weight: 16px;
+          }
+          .hodMessage__caption p {
+            margin: 0;
           }
           .hodMessage__imgText p {
             flex: 2;
