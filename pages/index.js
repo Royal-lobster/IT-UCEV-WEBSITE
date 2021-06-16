@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import AboutJntuv from "../components/AboutJntuv";
 import PostSection from "../components/LatestNewsSection";
+import HODMessage from "../components/HODMessage";
+import Footer from "../components/Footer";
+import Mission from "../components/Mission";
 function index() {
   let pages = [
     { name: "Home", isActive: true, url: "#" },
@@ -16,7 +19,10 @@ function index() {
       <Navbar pages={pages} />
       <Hero />
       <AboutJntuv />
+      <Mission />
+      <HODMessage />
       <PostSection />
+      <Footer />
     </div>
   );
 }
