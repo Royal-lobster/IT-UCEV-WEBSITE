@@ -154,7 +154,7 @@ function Navbar({ homepage, active }) {
           }
 
           @media screen and (max-width: 700px) {
-            nav,
+            .nav,
             .nav__homepage {
               border-bottom: 1px solid #603c9e;
               position: relative;
@@ -251,14 +251,12 @@ function Navbar({ homepage, active }) {
               width: 40px;
               height: 40px;
             }
-            .nav__homepage .nav__branding img {
-              width: 50px;
-              height: 40px;
-            }
-            .nav__logo h1 {
+            .nav__logo h1,
+            .nav__logoHome h1 {
               font-size: 20px;
             }
-            .nav__logo h2 {
+            .nav__logo h2,
+            .nav__logoHome h2 {
               font-size: 10px;
             }
           }

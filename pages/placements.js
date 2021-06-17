@@ -7,7 +7,7 @@ function placements() {
   return (
     <div>
       <Navbar active="placements" />
-      <HaveToDo pageName="Placements" />
+      <HaveToDo pageName="placements" />
       <Footer />
     </div>
   );
