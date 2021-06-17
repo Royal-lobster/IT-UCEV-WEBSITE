@@ -7,16 +7,9 @@ import HODMessage from "../components/HODMessage";
 import Footer from "../components/Footer";
 import Mission from "../components/Mission";
 function index() {
-  let pages = [
-    { name: "Home", isActive: true, url: "#" },
-    { name: "About", isActive: false, url: "#" },
-    { name: "Faculty", isActive: false, url: "#" },
-    { name: "Placements", isActive: false, url: "#" },
-    { name: "MOUs", isActive: false, url: "#" },
-  ];
   return (
     <div>
-      <Navbar pages={pages} />
+      <Navbar homepage active="home" />
       <Hero />
       <AboutJntuv />
       <Mission />

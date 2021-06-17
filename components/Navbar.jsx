@@ -1,13 +1,29 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-function Navbar({ pages }) {
+import Link from "next/link";
+
+function Navbar({ homepage, active }) {
+  const [toggleHamBurger, setToggleHamBurger] = useState(false);
   const hamMenu = useRef(null);
+  let pages = [
+    { name: "Home", isActive: active == "home", url: "/" },
+    { name: "About", isActive: active == "about", url: "about" },
+    { name: "Faculty", isActive: active == "faculty", url: "faculty" },
+    { name: "Placements", isActive: active == "placements", url: "placements" },
+    { name: "MOUs", isActive: active == "mous", url: "mous" },
+  ];
+  useEffect(() => {
+    if (toggleHamBurger) {
+      hamMenu.current.classList.toggle("open");
+    }
+  }, [toggleHamBurger]);
+
   return (
     <>
-      <nav className="nav">
+      <nav className={homepage ? "nav__homepage" : "nav"}>
         <div className="nav__branding">
           <Image src="/images/jntuk_logo.png" width="60" height="60" />
-          <div className="nav__logo">
+          <div className={homepage ? "nav__logoHome" : "nav__logo"}>
             <h1>JNTUK UCEV</h1>
             <h2>Information Technology</h2>
           </div>
@@ -15,7 +31,9 @@ function Navbar({ pages }) {
         <div
           className="navbar__hamburger"
           id="hamburger-icon"
-          onClick={() => hamMenu.current.classList.toggle("open")}
+          onClick={() => {
+            setToggleHamBurger(!toggleHamBurger);
+          }}
           ref={hamMenu}
         >
           <span></span>
@@ -26,20 +44,22 @@ function Navbar({ pages }) {
         <div className="nav__links">
           {pages.map((page) => {
             return (
-              <a
-                key={page.name}
-                className={`nav__link ${page.isActive && "nav__link--active"}`}
-                href={page.url}
-              >
-                {page.name}
-              </a>
+              <Link key={page.name} href={page.url}>
+                <a
+                  className={`nav__link ${
+                    page.isActive && "nav__link--active"
+                  }`}
+                >
+                  {page.name}
+                </a>
+              </Link>
             );
           })}
         </div>
       </nav>
       <style jsx global>
         {`
-          nav {
+          .nav__homepage {
             display: flex;
             position: absolute;
             z-index: 999;
@@ -51,6 +71,15 @@ function Navbar({ pages }) {
             padding: 30px 10px;
             color: #eee;
           }
+          .nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: transparent;
+            padding: 15px 10px;
+            color: #eee;
+            background-color: #23153c;
+          }
           .nav__branding {
             display: flex;
             gap: 20px;
@@ -60,24 +89,36 @@ function Navbar({ pages }) {
             border-radius: 8px;
             padding: 10px;
           }
-          .nav__logo {
+          .nav__logo,
+          .nav__logoHome {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-content: center;
           }
+          .nav__logoHome h1,
+          .nav__logoHome h2,
           .nav__logo h1,
           .nav__logo h2 {
             margin: 0;
             padding: 0;
           }
-          .nav__logo h1 {
+          .nav__logoHome h1 {
             font-size: 24px;
             font-weight: 900;
             color: #fff;
           }
-          .nav__logo h2 {
+          .nav__logoHome h2 {
             font-size: 14px;
+            font-weight: 400;
+          }
+          .nav__logo h1 {
+            font-size: 21px;
+            font-weight: 900;
+            color: #fff;
+          }
+          .nav__logo h2 {
+            font-size: 13px;
             font-weight: 400;
           }
           .nav__links {
@@ -107,9 +148,14 @@ function Navbar({ pages }) {
             color: white;
             border-radius: 8px;
           }
+          .nav__link--active:hover {
+            border-bottom: 0;
+            background-color: #9e2751;
+          }
 
           @media screen and (max-width: 700px) {
-            nav {
+            nav,
+            .nav__homepage {
               border-bottom: 1px solid #603c9e;
               position: relative;
               background-color: #23153c;
@@ -183,13 +229,30 @@ function Navbar({ pages }) {
             }
             /* Hamburger Icon and Animation end */
             .nav__links {
-              display: none;
+              display: ${toggleHamBurger ? "block" : "none"};
+              position: absolute;
+              flex-direction: column;
+              background-color: #fff;
+              color: #23153c;
+              top: 100px;
+              padding: 20px;
+              border-radius: 12px;
+              width: 100vw;
+              box-shadow: 0 0px 2.2px rgba(0, 0, 0, 0.02),
+                0 0px 5.3px rgba(0, 0, 0, 0.028),
+                0 0px 10px rgba(0, 0, 0, 0.035),
+                0 0px 17.9px rgba(0, 0, 0, 0.042),
+                0 0px 33.4px rgba(0, 0, 0, 0.05), 0 0px 80px rgba(0, 0, 0, 0.07);
             }
             .nav__branding img {
               background-color: #eee;
               border-radius: 8px;
               padding: 15px;
               width: 40px;
+              height: 40px;
+            }
+            .nav__homepage .nav__branding img {
+              width: 50px;
               height: 40px;
             }
             .nav__logo h1 {
