@@ -51,7 +51,7 @@ function Mission() {
             font-size: 18px;
             margin: 20px;
           }
-          @media screen and (max-width: 700px) {
+          @media screen and (max-width: 910px) {
             .departmentMission {
               border-radius: 0px;
             }

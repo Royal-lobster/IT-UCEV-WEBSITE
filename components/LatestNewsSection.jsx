@@ -29,7 +29,9 @@ function LatestNewsSection() {
           Ten latest news and anouncements from JNTUK University College of
           Engineering Vizianagaram
         </p>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 4 }}>
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 450: 2, 800: 3, 940: 4 }}
+        >
           <Masonry>
             {posts.length != 0 &&
               posts.map((post) => <Post data={post} key={post.title} />)}

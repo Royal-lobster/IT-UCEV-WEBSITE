@@ -65,7 +65,6 @@ function HODMessage() {
           .hodMessage__imgText {
             flex: 1;
             display: flex;
-            flex-wrap: wrap;
             color: #333;
             font-size: 18px;
             align-items: center;
@@ -80,7 +79,7 @@ function HODMessage() {
           }
           .hodMessage__caption h4 {
             margin: 5px 0;
-            font-weight: 16px;
+            font-size: 18px;
           }
           .hodMessage__caption p {
             margin: 0;
@@ -107,7 +106,7 @@ function HODMessage() {
           .hodMessage__map {
             width: 100%;
           }
-          @media screen and (max-width: 700px) {
+          @media screen and (max-width: 910px) {
             .hodMessage {
               padding: 20px;
               margin-top: 20px;
@@ -115,6 +114,9 @@ function HODMessage() {
             }
             .hodMessage__map {
               width: 80%;
+            }
+            .hodMessage__imgText {
+              flex-direction: column;
             }
             .hodMessage__text,
             .hodMessage__imgText {
