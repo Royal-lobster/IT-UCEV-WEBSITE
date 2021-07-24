@@ -9,9 +9,8 @@ function LatestNewsSection() {
   const [width] = useWindowSize();
 
   const [posts, setPosts] = useState([]);
-  const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-  const URL =
-    "https://api.rss2json.com/v1/api.json?rss_url=http://jntukucev.ac.in/feed/";
+  const CORS_PROXY = "https://corsyproxyfoxy.herokuapp.com/";
+  const URL = "https://api.rss2json.com/v1/api.json?rss_url=http://jntukucev.ac.in/feed/";
 
   useEffect(() => {
     Axios.get(CORS_PROXY + URL)
@@ -24,35 +23,16 @@ function LatestNewsSection() {
   return (
     <>
       <div className="latestNewsSection">
-        <h1>Latest News (ALPHA)</h1>
-        <p>
-          Ten latest news and anouncements from JNTUK University College of
-          Engineering Vizianagaram{" "}
-          <a
-            style={{ color: "red" }}
-            target="_blank"
-            href="https://cors-anywhere.herokuapp.com/https://api.rss2json.com/v1/api.json?rss_url=http://jntukucev.ac.in/feed/"
-          >
-            (request server if not loading)
-          </a>
-        </p>
-        <ResponsiveMasonry
-          columnsCountBreakPoints={{ 350: 1, 450: 2, 800: 3, 940: 4 }}
-        >
-          <Masonry>
-            {posts.length != 0 &&
-              posts.map((post) => <Post data={post} key={post.title} />)}
-          </Masonry>
+        <h1>Latest News</h1>
+        <p>Ten latest news and anouncements from JNTUK University College of Engineering Vizianagaram </p>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 450: 2, 800: 3, 940: 4 }}>
+          <Masonry>{posts.length != 0 && posts.map((post) => <Post data={post} key={post.title} />)}</Masonry>
         </ResponsiveMasonry>
         <div className="latestNewsSection__loading">
           {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map((item) => (
             <>
               {posts.length == 0 && (
-                <Skeleton
-                  style={{ border: "1px solid #ccc", margin: 5 }}
-                  height={150}
-                  width={250}
-                />
+                <Skeleton style={{ border: "1px solid #ccc", margin: 5 }} height={150} width={250} />
               )}
             </>
           ))}
