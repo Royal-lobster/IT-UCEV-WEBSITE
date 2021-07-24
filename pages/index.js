@@ -10,7 +10,7 @@ import Mission from "../components/Mission";
 function index() {
   return (
     <>
-      <Script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" strategy="beforeInteractive" />
+      <Script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" strategy="lazyOnload" />
       <Navbar homepage active="home" />
       <Hero />
       <AboutJntuv />
