@@ -165,6 +165,11 @@ function Navbar({ homepage, active }) {
               padding: 20px 20px;
             }
 
+            .nav__logo,
+            .nav__logoHome {
+              margin-left: 0px;
+            }
+
             /* Hamburger Icon and Animation */
             #hamburger-icon {
               width: 24px;
