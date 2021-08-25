@@ -25,7 +25,7 @@ function HaveToDo({ pageName }) {
         .haveToDo__wraper {
           margin: 0;
           color: #444;
-          padding: 60px;
+          padding: 50px;
           text-align: center;
           max-width: min(90vw, 600px);
           background-color: #fff;

@@ -11,6 +11,7 @@ function Navbar({ homepage, active }) {
     { name: "Faculty", isActive: active == "faculty", url: "faculty" },
     { name: "Placements", isActive: active == "placements", url: "placements" },
     { name: "MOUs", isActive: active == "mous", url: "mous" },
+    { name: "Courses", isActive: active == "courses", url: "courses" },
   ];
   useEffect(() => {
     if (toggleHamBurger) {
@@ -24,8 +25,8 @@ function Navbar({ homepage, active }) {
         <div className="nav__branding">
           <Image src="/images/jntuk_logo.png" width="60" height="60" />
           <div className={homepage ? "nav__logoHome" : "nav__logo"}>
-            <h1>JNTUK UCEV</h1>
-            <h2>Information Technology</h2>
+            <h1>Information Technology</h1>
+            <h2>JNTUK UCEV Vizianagaram</h2>
           </div>
         </div>
         <div
@@ -82,7 +83,7 @@ function Navbar({ homepage, active }) {
           }
           .nav__branding {
             display: flex;
-            gap: 20px;
+            gap: 10px;
           }
           .nav__branding img {
             background-color: #eee;
@@ -95,6 +96,7 @@ function Navbar({ homepage, active }) {
             flex-direction: column;
             justify-content: center;
             align-content: center;
+            margin-left: 10px;
           }
           .nav__logoHome h1,
           .nav__logoHome h2,
@@ -104,7 +106,7 @@ function Navbar({ homepage, active }) {
             padding: 0;
           }
           .nav__logoHome h1 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
             color: #fff;
           }
@@ -153,7 +155,7 @@ function Navbar({ homepage, active }) {
             background-color: #9e2751;
           }
 
-          @media screen and (max-width: 700px) {
+          @media screen and (max-width: 850px) {
             .nav,
             .nav__homepage {
               border-bottom: 1px solid #603c9e;
@@ -248,12 +250,12 @@ function Navbar({ homepage, active }) {
               background-color: #eee;
               border-radius: 8px;
               padding: 15px;
-              width: 40px;
-              height: 40px;
             }
             .nav__logo h1,
             .nav__logoHome h1 {
-              font-size: 20px;
+              font-size: 19px;
+              line-height: 1;
+              margin-bottom: 3px;
             }
             .nav__logo h2,
             .nav__logoHome h2 {
